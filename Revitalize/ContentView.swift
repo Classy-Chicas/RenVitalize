@@ -23,20 +23,41 @@ struct ContentView: View {
                     VStack{
                         HStack{
                        Image("Revitalize")
-                                
+                                .resizable()
+                                .aspectRatio(contentMode: .fit )
+                                .frame(width:200, height: 75)
                             VStack{
                                 Image("Login")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:75, height: 25)
+                                
                                 Image("SignUp")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:75, height: 25)
                             }
                         }
                         HStack{
                             Image("CurrentProject")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit )
+                                .frame(width:300, height: 400)
+                            
                         }
                         HStack{
                             Image("HomeOwnersGuide")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit )
+                                .frame(width:300, height: 130)
+                            
                         }
                         HStack{
                             Image("MenuBar")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit )
+                                .frame(width:389, height: 130)
+                                .offset(x: 0.0, y: 54.0)
                         }
                     }
                 }
