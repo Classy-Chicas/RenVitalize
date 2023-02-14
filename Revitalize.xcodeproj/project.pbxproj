@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653AEBD2299C0016002900BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653AEBD1299C0016002900BF /* LoginView.swift */; };
 		65500819298AFB1100E02D26 /* RevitalizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65500818298AFB1100E02D26 /* RevitalizeApp.swift */; };
 		6550081B298AFB1100E02D26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550081A298AFB1100E02D26 /* ContentView.swift */; };
 		6550081D298AFB1300E02D26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6550081C298AFB1300E02D26 /* Assets.xcassets */; };
@@ -16,10 +17,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653AEBD1299C0016002900BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		65500815298AFB1100E02D26 /* Revitalize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revitalize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65500818298AFB1100E02D26 /* RevitalizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevitalizeApp.swift; sourceTree = "<group>"; };
 		6550081A298AFB1100E02D26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
-		6550081C298AFB1300E02D26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6550081C298AFB1300E02D26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Revitalize/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		6550081F298AFB1300E02D26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65500821298AFB1300E02D26 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		65500824298AFB1300E02D26 /* Revitalize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Revitalize.xcdatamodel; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				65500826298AFB1300E02D26 /* Info.plist */,
 				65500823298AFB1300E02D26 /* Revitalize.xcdatamodeld */,
 				6550081E298AFB1300E02D26 /* Preview Content */,
+				653AEBD1299C0016002900BF /* LoginView.swift */,
 			);
 			path = Revitalize;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				65500822298AFB1300E02D26 /* Persistence.swift in Sources */,
 				6550081B298AFB1100E02D26 /* ContentView.swift in Sources */,
 				65500825298AFB1300E02D26 /* Revitalize.xcdatamodeld in Sources */,
+				653AEBD2299C0016002900BF /* LoginView.swift in Sources */,
 				65500819298AFB1100E02D26 /* RevitalizeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,20 +22,29 @@ struct ContentView: View {
                 ZStack{
                     VStack{
                         HStack{
-                       Image("Revitalize")
+                            Image("Revitalize")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:200, height: 75)
                             VStack{
-                                Image("Login")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit )
-                                    .frame(width:75, height: 25)
-                                
-                                Image("SignUp")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit )
-                                    .frame(width:75, height: 25)
+                                Button(action: {
+                                    print ("Hello")
+                                }, label: {
+                                    Image("Login")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit )
+                                        .frame(width:75, height: 25)
+                                })
+                                //
+                                Button(action: {
+                                    print ("Hello")
+                                }, label: {
+                                    Image("SignUp")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit )
+                                        .frame(width:75, height: 25)
+                                    
+                                })
                             }
                         }
                         HStack{
