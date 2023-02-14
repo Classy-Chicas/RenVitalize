@@ -18,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		653AEBD1299C0016002900BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		653AEBD3299C21A1002900BF /* Revitalize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Revitalize.entitlements; sourceTree = "<group>"; };
 		65500815298AFB1100E02D26 /* Revitalize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revitalize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65500818298AFB1100E02D26 /* RevitalizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevitalizeApp.swift; sourceTree = "<group>"; };
 		6550081A298AFB1100E02D26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -58,6 +59,7 @@
 		65500817298AFB1100E02D26 /* Revitalize */ = {
 			isa = PBXGroup;
 			children = (
+				653AEBD3299C21A1002900BF /* Revitalize.entitlements */,
 				65500818298AFB1100E02D26 /* RevitalizeApp.swift */,
 				6550081A298AFB1100E02D26 /* ContentView.swift */,
 				6550081C298AFB1300E02D26 /* Assets.xcassets */,
@@ -278,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Revitalize/Revitalize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Revitalize/Preview Content\"";
@@ -307,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Revitalize/Revitalize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Revitalize/Preview Content\"";
