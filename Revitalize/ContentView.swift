@@ -39,27 +39,38 @@ struct ContentView: View {
                             }
                         }
                         HStack{
-                            Image("CurrentProject")
+                            Image("CurrentProjectCard")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:300, height: 400)
                             
                         }
+                        VStack{
+                            Text("Current Homeowner Project")
+                            Text("CREATED 12/23/2022")
+                            Text("BIO")
+                            Text("Hi we’re the Fordson’s and we have a 1919 colonial we are fixing. We have already gutted and removed debris and need a little help funding the roof and exterior paint.")
+                                
+                                .frame(width:300)
+                                .padding()
+                            
+                        }
                         HStack{
-                            Image("HomeOwnersGuide")
+                            Image("HomeOwnersGuideCard")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
-                                .frame(width:300, height: 130)
-                            
+                                .frame(width:400, height: 130)
+                                .offset(x: 0.0, y: 0.0)
                         }
                         HStack{
                             Image("MenuBar")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
-                                .frame(width:389, height: 130)
-                                .offset(x: 0.0, y: 54.0)
+                                .frame(width:600 )
+                                .offset(x: 0.0, y: -20.0)
                         }
                     }
+                    
                 }
             }
 //            List {
