@@ -27,14 +27,21 @@ struct ContentView: View {
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:200, height: 75)
                             VStack{
-                                Button(action: {
-                                    print ("Hello")
-                                }, label: {
+//                                Button(action: {
+//
+//                                }, label: {
+//                                    Image("Login")
+//                                        .resizable()
+//                                        .aspectRatio(contentMode: .fit )
+//                                        .frame(width:75, height: 25)
+//                                })
+                                
+                                NavigationLink(destination: LoginView()) {
                                     Image("Login")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit )
-                                        .frame(width:75, height: 25)
-                                })
+                                                                    .resizable()
+                                                                        .aspectRatio(contentMode: .fit )
+                                                                        .frame(width:75, height: 25)
+                                }
                                 //
                                 Button(action: {
                                     print ("Hello")

@@ -33,41 +33,48 @@ struct LoginView: View {
                     .aspectRatio(contentMode: .fit )
                     .frame(width:200, height: 75)
             }
-            SignInWithAppleButton(.continue){
-                request in
-                request.requestedScopes = [.email, .fullName]
-            } onCompletion: { result in
-              
-                switch result {
-                case .success(let auth):
-                    
-                    switch auth.credential {
-                       case let credential as
-                    ASAuthorizationAppleIDCredential:
-                        let email = credential.email
-                        let firstName = credential.fullName?.givenName
-                        let lastName = credential.fullName?.familyName
-                        let userId = credential.user
+            //checking for authentication
+            if userId.isEmpty                {
+                SignInWithAppleButton(.signIn){
+                    request in
+                    request.requestedScopes = [.email, .fullName]
+                } onCompletion: { result in
+                  
+                    switch result {
+                    case .success(let auth):
                         
-                        self.email = email ?? ""
-                        self.userId = userId
-                        self.firtName = firstName ?? ""
-                        self.lastName = lastName ?? ""
+                        switch auth.credential {
+                           case let credential as
+                        ASAuthorizationAppleIDCredential:
+                            let email = credential.email
+                            let firstName = credential.fullName?.givenName
+                            let lastName = credential.fullName?.familyName
+                            let userId = credential.user
+                            
+                            self.email = email ?? ""
+                            self.userId = userId
+                            self.firtName = firstName ?? ""
+                            self.lastName = lastName ?? ""
+                            
+                            
+                        default:
+                            break
+                        }
                         
-                        
-                    default:
-                        break
+                    case .failure(let error):
+                        print(error)
                     }
-                    
-                case .failure(let error):
-                    print(error)
                 }
+                .signInWithAppleButtonStyle(
+                    colorScheme == .dark ? .white : .black)
+                .frame(width: 150, height:50 )
+                .padding()
+                .cornerRadius(10)
             }
-            .signInWithAppleButtonStyle(
-                colorScheme == .dark ? .white : .black)
-            .frame(width: 150, height:50 )
-            .padding()
-            .cornerRadius(10)
+            //user is already signed in
+            
+            
+            
         }
     }
     }
