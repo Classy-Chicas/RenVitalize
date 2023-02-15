@@ -86,15 +86,6 @@ struct ContentView: View {
                                 .frame(width:300, height: 400)
                             
                         }
-                        NavigationLink(destination: //TODO: change navigation to previous project
-                                       LoginView()) {
-                            Image("SeeAll")
-                                                            .resizable()
-                                                                .aspectRatio(contentMode: .fit )
-                                                                .frame(width:75, height: 25)
-                                                                .offset(x: 90.0, y: -35.0)
-                                                            
-                        }
                         VStack{
                             Text("Current Homeowner Project")
                             Text("CREATED 12/23/2022")
