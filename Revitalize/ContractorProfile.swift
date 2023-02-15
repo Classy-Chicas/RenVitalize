@@ -39,10 +39,13 @@ struct ContractorProfile: View {
                 }
                 Form{
                     TextField("First Name",text:  $firstName)
+                        .disableAutocorrection(true)
+                                        .autocapitalization(.none)
                     TextField("Last Name",text:  $lastName)
                     TextField("Title",text:  $title)
                     TextField("Phone Number",text:  $phoneNumber)
                 }
+                
             }
         }
 }    }

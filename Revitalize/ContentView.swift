@@ -71,6 +71,22 @@ struct ContentView: View {
                                 .padding()
                             
                         }
+                        VStack{
+                            var gaugeValue = 50.0
+                            
+                            Gauge(value: gaugeValue, in: 0...100) {
+                                
+                            } currentValueLabel: {
+                                Text("50% Complete")
+                                    .foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
+                            } minimumValueLabel: {
+                                Text("0")
+                            } maximumValueLabel: {
+                                Text("100")
+                            }.gaugeStyle(.automatic)
+                                .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
+                        }.frame(width:200)
+                            .padding()
                         HStack{
                             Image("HomeOwnersGuideCard")
                                 .resizable()
