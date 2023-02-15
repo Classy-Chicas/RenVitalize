@@ -72,7 +72,9 @@ struct LoginView: View {
                 .cornerRadius(10)
             }
             //user is already signed in
-            
+            else{
+                
+            }
             
             
         }
