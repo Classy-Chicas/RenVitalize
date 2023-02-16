@@ -48,12 +48,15 @@ struct ContentView: View {
                         }.padding(.bottom, 20)
                         HStack(){
 //make button to make a pushable stack on click, in pushable stack make button to var fundsRaised value, and print a thank you response on submit and dismiss the pushable stack
-                            Image("Donate")
-                                
-                                .resizable()
-                                .aspectRatio(contentMode: .fit )
-                                .frame(width:90, height: 30, alignment: .leading)
-                                .offset(x: -10.0, y: 0.0)
+                            NavigationLink(destination: Donate()) {
+                                Image("Donate")
+                                    
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:90, height: 30, alignment: .leading)
+                                    .offset(x: -10.0, y: 0.0)
+                            }
+                            
                             
                                
  //donate progression gauge
