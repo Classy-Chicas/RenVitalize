@@ -15,11 +15,8 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-//    let goal: Double
-//    let fundsRaised: Double
-//    var precentageRaised: Double{
-//        fundsRaised/goal * 100
-//    }
+    @StateObject var donations = Donations(donatedAmount: 0.0, fundsRaised: 0.0, goal: 18_000)
+    
 
     var body: some View {
         NavigationView {
@@ -63,7 +60,7 @@ struct ContentView: View {
 // TODO: input code snippet from Cory
                             
                             var gaugeValue = 50.0
-                            Text("GOAL")
+                            Text("GOAL \(donations.goal)")
                                 .foregroundColor(.init("primaryGreen"))
                                 .fontWeight(.bold)
                                 .font(.callout)
@@ -202,4 +199,29 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
+}
+
+class Donations: ObservableObject{
+    
+    @Published  var donatedAmount: Double = 0.0
+    @Published var fundsRaised: Double
+    @Published var goal: Double
+    
+    init(donatedAmount: Double, fundsRaised: Double, goal: Double) {
+        self.donatedAmount = donatedAmount
+        self.fundsRaised = fundsRaised
+        self.goal = goal
+    }
+    
+    
+    func how() {
+        
+        
+        
+    }
+    
+    var precentageRaised: Double{
+        fundsRaised/goal * 100
+     }
+    
 }

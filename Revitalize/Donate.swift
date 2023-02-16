@@ -11,6 +11,8 @@ struct Donate: View {
     @State private var messageToHomeOwner: String = ""
     @State private var switchToggle = false
     @State private var donorSignature: String = ""
+    @EnvironmentObject var donations: Donations
+    
     var body: some View {
         VStack{
             Text("The Fordson's sincerely appreciate you!")
@@ -34,28 +36,45 @@ struct Donate: View {
                 .foregroundColor(.init("primaryGreen"))
             Grid(){
                 GridRow(){
-                Image("Pay25")
-                        .resizable()
-                            .aspectRatio(contentMode: .fit )
-                            .frame(width:100)
+                    Button(){
+                        donations.donatedAmount = 25.0
+                    } label: {
+                        Image("Pay25")
+                                .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:100)
+                    }
+                
                             
-                Image("Pay50")
-                        .resizable()
-                            .aspectRatio(contentMode: .fit )
-                            .frame(width:100)
+                    Button(){
+                        donations.donatedAmount = 50.0
+                    } label: {
+                        Image("Pay50")
+                                .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:100)
+                    }
                             
                 }
                 
                 GridRow(){
-                Image("Pay100")
-                        .resizable()
-                            .aspectRatio(contentMode: .fit )
-                            .frame(width:100)
+                    Button(){
+                        donations.donatedAmount = 100.0
+                    } label: {
+                        Image("Pay100")
+                                .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:100)
+                    }
                             
-                Image("Pay200")
-                        .resizable()
-                            .aspectRatio(contentMode: .fit )
-                            .frame(width:100)
+                    Button(){
+                        donations.donatedAmount = 200.0
+                    } label: {
+                        Image("Pay200")
+                                .resizable()
+                                    .aspectRatio(contentMode: .fit )
+                                    .frame(width:100)
+                    }
                             
                 }
                 Text("Leave a message for the Fordson's")
