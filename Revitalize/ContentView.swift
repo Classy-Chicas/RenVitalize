@@ -15,7 +15,11 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
+//    let goal: Double
+//    let fundsRaised: Double
+//    var precentageRaised: Double{
+//        fundsRaised/goal * 100
+//    }
 
     var body: some View {
         NavigationView {
@@ -27,6 +31,7 @@ struct ContentView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:200, height: 75)
+                                
                             VStack{
                               
                                 
@@ -36,33 +41,30 @@ struct ContentView: View {
                                                                         .aspectRatio(contentMode: .fit )
                                                                         .frame(width:75, height: 25)
                                 }
-                                //
-                                Button(action: {
-                                    print ("Hello")
-                                }, label: {
-                                    Image("SignUp")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit )
-                                        .frame(width:75, height: 25)
-                                    
-                                })
+//Deleted sign up as it is repetitive to login
                                 
                             }
                             
-                        }
+                        }.padding(.bottom, 20)
                         HStack(){
                             Image("Donate")
                                 
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
-                                .frame(width:110, height: 40, alignment: .leading)
-                                .offset(x: -35.0, y: 0.0)
-                            Spacer()
+                                .frame(width:90, height: 30, alignment: .leading)
+                                .offset(x: -10.0, y: 0.0)
+                            
                                
  //donate progression gauge
 // TODO: input code snippet from Cory
                             
                             var gaugeValue = 50.0
+                            Text("GOAL")
+                                .foregroundColor(.init("primaryGreen"))
+                                .fontWeight(.bold)
+                                .font(.callout)
+                                .offset(x: 100.0, y: 0.0)
+                                .baselineOffset(80)
                             
                             Gauge(value: gaugeValue, in: 0...100) {
                                 
@@ -76,7 +78,8 @@ struct ContentView: View {
                             }.gaugeStyle(.automatic)
                                 .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
                                 
-                        }.frame(width:250, height:75, alignment: .trailing)
+                        }
+                        .frame(width:300, height:100, alignment: .trailing)
                         
                             
                         HStack{
@@ -97,9 +100,13 @@ struct ContentView: View {
                         }
                         VStack{
                             Text("Current Homeowner Project")
+                                .foregroundColor(.init("primaryGreen"))
                             Text("CREATED 12/23/2022")
+                                .foregroundColor(.init("primaryGreen"))
                             Text("BIO")
+                                .foregroundColor(.init("primaryGreen"))
                             Text("Hi we’re the Fordson’s and we have a 1919 colonial we are fixing. We have already gutted and removed debris and need a little help funding the roof and exterior paint.")
+                                .foregroundColor(.init("primaryGreen"))
                                 
                                 .frame(width:300)
                                 .padding()
