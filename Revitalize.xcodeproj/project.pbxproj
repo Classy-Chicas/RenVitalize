@@ -65,6 +65,7 @@
 			children = (
 				653AEBD4299C53D3002900BF /* ContractorProfile.swift */,
 				653AEBD1299C0016002900BF /* LoginView.swift */,
+				65263528299E6BAC0067BA80 /* Donate.swift */,
 				653AEBD3299C21A1002900BF /* Revitalize.entitlements */,
 				65500818298AFB1100E02D26 /* RevitalizeApp.swift */,
 				6550081A298AFB1100E02D26 /* ContentView.swift */,
@@ -73,7 +74,6 @@
 				65500826298AFB1300E02D26 /* Info.plist */,
 				65500823298AFB1300E02D26 /* Revitalize.xcdatamodeld */,
 				6550081E298AFB1300E02D26 /* Preview Content */,
-				65263528299E6BAC0067BA80 /* Donate.swift */,
 			);
 			path = Revitalize;
 			sourceTree = "<group>";
