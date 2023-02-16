@@ -17,7 +17,7 @@ struct LoginView: View {
     @AppStorage("userId") var userId: String = ""
     
     var body: some View {
-        
+
         NavigationView{
         VStack{
             
@@ -72,7 +72,13 @@ struct LoginView: View {
                 .cornerRadius(10)
             }
             //user is already signed in
-            
+            else{
+                //TODO: need screen to check for truth if contractor or homeowner. Single menu Menu("Continue as:") {
+                //Button("Contractor"){
+                //}
+                //Button("Home Owner"){
+                //}
+            }
             
             
         }

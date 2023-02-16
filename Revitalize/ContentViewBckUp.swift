@@ -15,11 +15,7 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-//    let goal: Double
-//    let fundsRaised: Double
-//    var precentageRaised: Double{
-//        fundsRaised/goal * 100
-//    }
+    
 
     var body: some View {
         NavigationView {
@@ -31,7 +27,6 @@ struct ContentView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:200, height: 75)
-                                
                             VStack{
                               
                                 
@@ -41,31 +36,33 @@ struct ContentView: View {
                                                                         .aspectRatio(contentMode: .fit )
                                                                         .frame(width:75, height: 25)
                                 }
-//Deleted sign up as it is repetitive to login
+                                //
+                                Button(action: {
+                                    print ("Hello")
+                                }, label: {
+                                    Image("SignUp")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit )
+                                        .frame(width:75, height: 25)
+                                    
+                                })
                                 
                             }
                             
-                        }.padding(.bottom, 20)
+                        }
                         HStack(){
-//make button to make a pushable stack on click, in pushable stack make button to var fundsRaised value, and print a thank you response on submit and dismiss the pushable stack
                             Image("Donate")
                                 
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
-                                .frame(width:90, height: 30, alignment: .leading)
-                                .offset(x: -10.0, y: 0.0)
-                            
+                                .frame(width:110, height: 40, alignment: .leading)
+                                .offset(x: -35.0, y: 0.0)
+                            Spacer()
                                
  //donate progression gauge
 // TODO: input code snippet from Cory
                             
                             var gaugeValue = 50.0
-                            Text("GOAL")
-                                .foregroundColor(.init("primaryGreen"))
-                                .fontWeight(.bold)
-                                .font(.callout)
-                                .offset(x: 100.0, y: 0.0)
-                                .baselineOffset(80)
                             
                             Gauge(value: gaugeValue, in: 0...100) {
                                 
@@ -79,8 +76,7 @@ struct ContentView: View {
                             }.gaugeStyle(.automatic)
                                 .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
                                 
-                        }
-                        .frame(width:300, height:100, alignment: .trailing)
+                        }.frame(width:250, height:75, alignment: .trailing)
                         
                             
                         HStack{
@@ -90,24 +86,11 @@ struct ContentView: View {
                                 .frame(width:300, height: 400)
                             
                         }
-                        NavigationLink(destination: //TODO: change navigation to previous project
-                                       LoginView()) {
-                            Image("SeeAll")
-                                                            .resizable()
-                                                                .aspectRatio(contentMode: .fit )
-                                                                .frame(width:75, height: 25)
-                                                                .offset(x: 90.0, y: -35.0)
-                                                            
-                        }
                         VStack{
                             Text("Current Homeowner Project")
-                                .foregroundColor(.init("primaryGreen"))
                             Text("CREATED 12/23/2022")
-                                .foregroundColor(.init("primaryGreen"))
                             Text("BIO")
-                                .foregroundColor(.init("primaryGreen"))
                             Text("Hi we’re the Fordson’s and we have a 1919 colonial we are fixing. We have already gutted and removed debris and need a little help funding the roof and exterior paint.")
-                                .foregroundColor(.init("primaryGreen"))
                                 
                                 .frame(width:300)
                                 .padding()
