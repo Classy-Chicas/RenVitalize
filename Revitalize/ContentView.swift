@@ -46,12 +46,13 @@ struct ContentView: View {
                         HStack(){
 //make button to make a pushable stack on click, in pushable stack make button to var fundsRaised value, and print a thank you response on submit and dismiss the pushable stack
                             NavigationLink(destination: Donate()) {
+                                Spacer(minLength: 20)
                                 Image("Donate")
                                     
                                     .resizable()
                                     .aspectRatio(contentMode: .fit )
-                                    .frame(width:90, height: 30, alignment: .leading)
-                                    .offset(x: -10.0, y: 0.0)
+                                    .frame(width:80, height: 30, alignment: .leading)
+                                    .offset(x: 0.0, y: 0.0)
                             }
                             
                             
@@ -80,7 +81,7 @@ struct ContentView: View {
                                 .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
                                 
                         }
-                        .frame(width:300, height:100, alignment: .trailing)
+                        .frame(width:400, height:120)
                         
                             
                         HStack{
@@ -124,7 +125,7 @@ struct ContentView: View {
                         HStack{
                             Image("MenuBar")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit )
+//                                .aspectRatio(contentMode: .fit )
                                 .frame(width:600 )
                                 .offset(x: 0.0, y: -20.0)
                         }
