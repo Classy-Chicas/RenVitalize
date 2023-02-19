@@ -68,21 +68,24 @@ struct ContentView: View {
                                 .offset(x: 100.0, y: 0.0)
                                 .baselineOffset(80)
                             
-                            Gauge(value: gaugeValue, in: 0...100) {
+                            Gauge(value: gaugeValue, in: 0...100)
+                                    
+                            {
                                 
                             } currentValueLabel: {
                                 Text("50% Complete")
                                     .foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
+                                    .offset(x: -20.0, y: 0.0)
                             } minimumValueLabel: {
                                 Text("0")
                             } maximumValueLabel: {
-                                Text("100")
+                                Text("100%")
                             }.gaugeStyle(.automatic)
                                 .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
-                                
+                                .offset(x: -50.0, y: 0.0)
                         }
-                        .frame(width:400, height:120)
-                        
+                        .frame(width:450, height:120)
+                        Spacer(minLength: -50)
                             
                         HStack{
                             Image("CurrentProjectCard")
@@ -91,6 +94,7 @@ struct ContentView: View {
                                 .frame(width:300, height: 400)
                             
                         }
+                        Spacer(minLength: 10)
                         NavigationLink(destination: //TODO: change navigation to previous project
                                        LoginView()) {
                             Image("SeeAll")
