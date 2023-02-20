@@ -90,33 +90,32 @@ struct Donate: View {
 					.border(Color(hue: 0.646, saturation: 0.052, brightness: 0.854), width: 1)
 				
 				
-				Toggle("Signature", isOn: $switchToggle)
-					.frame(height: 2.0)
-					.toggleStyle(SwitchToggleStyle(tint: .init("primaryGreen")))
-					.padding([.top, .leading, .trailing], 30.0)
-				Spacer(minLength: 30 )
-				TextField("Sign", text: $donorSignature)
-					.offset(x: 0.0, y: -30.0)
-					.padding([.top, .leading, .trailing], 30.0)
-					.frame(height: 65.0)
-					.border(Color(hue: 0.646, saturation: 0.052, brightness: 0.854), width: 1)
+		
+				Spacer()
 				
-				Button(){
+				ZStack{
 					
-					
-				} label: {
-					RoundedRectangle(cornerRadius: 20)
-						.frame(width: 150,height: 50)
-						.foregroundColor(.init("primaryGreen"))
-						.overlay {
-							VStack {
-								Text("DONATE")
-									.foregroundColor(.white)
-									.fontWeight(.black)
-							}}
-					
+					Button(){
+						
+						
+					} label: {
+						RoundedRectangle(cornerRadius: 20)
+							.frame(width: 150,height: 50)
+							.foregroundColor(.init("primaryGreen"))
+							.overlay {
+								VStack {
+									Text("DONATE")
+										.foregroundColor(.white)
+										.fontWeight(.black)
+								}
+								
+							}
+						
+					}
 				}
-				.padding(.top, 15.0)
+				Spacer()
+				
+				
 				//
 				
 			}

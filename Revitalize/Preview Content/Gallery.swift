@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct Gallery: View {
     
