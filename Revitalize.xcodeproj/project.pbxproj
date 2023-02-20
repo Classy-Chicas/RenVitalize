@@ -78,8 +78,6 @@
 				65500826298AFB1300E02D26 /* Info.plist */,
 				65500823298AFB1300E02D26 /* Revitalize.xcdatamodeld */,
 				6550081E298AFB1300E02D26 /* Preview Content */,
-				6526352A299FE03B0067BA80 /* Gallery.swift */,
-				6526354A29A1A2930067BA80 /* GalleryData.swift */,
 			);
 			path = Revitalize;
 			sourceTree = "<group>";
@@ -87,6 +85,8 @@
 		6550081E298AFB1300E02D26 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				6526352A299FE03B0067BA80 /* Gallery.swift */,
+				6526354A29A1A2930067BA80 /* GalleryData.swift */,
 				6550081F298AFB1300E02D26 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";

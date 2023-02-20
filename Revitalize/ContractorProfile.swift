@@ -22,30 +22,45 @@ struct ContractorProfile: View {
     
     var body: some View {
         NavigationView{
+			
             VStack{
                 HStack{
                     Image(systemName: "xmark")
+						.offset(x:-100.0, y: -10.0)
                     Image("Logout")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 100)
+						.offset(x:110.0, y: -5.0)
                 }
                 Image("Contractor Profile")
+					.resizable()
+					.aspectRatio(contentMode: .fit)
+					.frame(width: 200)
+					.padding()
                 Form{
                     TextField("Company Name", text: $companyName)
                     TextField("Email",text:  $email)
-                    TextField("License Number",text:  $licenseNumber)
                     TextField("Company Address",text:  $companyAddress)
                     TextField("City",text:  $city)
                     TextField("State",text:  $state)
                     TextField("Zip Code",text:  $zipCode)
+					TextField("First Name",text:  $firstName).disableAutocorrection(true)
+					TextField("Last Name",text:  $lastName)
+					TextField("Title",text:  $title)
+					TextField("Phone Number", text: $phoneNumber)
                 }
-                Form{
-                    TextField("First Name",text:  $firstName)
-                        .disableAutocorrection(true)
-                                        .autocapitalization(.none)
-                    TextField("Last Name",text:  $lastName)
-                    TextField("Title",text:  $title)
-                    TextField("Phone Number",text:  $phoneNumber)
-                }
-                
+				.cornerRadius(10)
+				.padding()
+				
+				NavigationLink(destination: Donate()) {
+					Spacer(minLength: 20)
+					Text("Continue")
+						.bold()
+					Image(systemName: "rectangle.portrait.and.arrow.right")
+				}
+				.offset(x:-30.0, y: -60.0)
+				.foregroundColor( .init("primaryGreen"))
             }
         }
 }    }
