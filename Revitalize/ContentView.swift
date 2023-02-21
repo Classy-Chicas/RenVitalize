@@ -67,9 +67,11 @@ struct ContentView: View {
 																Text("50% Complete")
 																	.foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
 															} minimumValueLabel: {
-																Text("0")
+																Text("0%")
+												
+									
 															} maximumValueLabel: {
-																Text("100")
+																Text("100%")
 															}.gaugeStyle(.automatic)
 																.tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
 													
