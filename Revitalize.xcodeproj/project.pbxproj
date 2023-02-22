@@ -16,6 +16,7 @@
 		65500820298AFB1300E02D26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6550081F298AFB1300E02D26 /* Preview Assets.xcassets */; };
 		65500822298AFB1300E02D26 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65500821298AFB1300E02D26 /* Persistence.swift */; };
 		65500825298AFB1300E02D26 /* Revitalize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65500823298AFB1300E02D26 /* Revitalize.xcdatamodeld */; };
+		6566DDB529A4538300C7326C /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6566DDB429A4538300C7326C /* Gallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		65500821298AFB1300E02D26 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		65500824298AFB1300E02D26 /* Revitalize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Revitalize.xcdatamodel; sourceTree = "<group>"; };
 		65500826298AFB1300E02D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6566DDB429A4538300C7326C /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				653AEBD3299C21A1002900BF /* Revitalize.entitlements */,
 				65500818298AFB1100E02D26 /* RevitalizeApp.swift */,
 				6550081A298AFB1100E02D26 /* ContentView.swift */,
+				6566DDB429A4538300C7326C /* Gallery.swift */,
 				6550081C298AFB1300E02D26 /* Assets.xcassets */,
 				65500821298AFB1300E02D26 /* Persistence.swift */,
 				65500826298AFB1300E02D26 /* Info.plist */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6566DDB529A4538300C7326C /* Gallery.swift in Sources */,
 				65500822298AFB1300E02D26 /* Persistence.swift in Sources */,
 				6550081B298AFB1100E02D26 /* ContentView.swift in Sources */,
 				65263529299E6BAC0067BA80 /* Donate.swift in Sources */,

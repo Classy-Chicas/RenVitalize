@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Foundation
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,11 +16,10 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-//    let goal: Double
-//    let fundsRaised: Double
-//    var precentageRaised: Double{
-//        fundsRaised/goal * 100
-//    }
+	
+//    var gaugeValue = Donations.fundsRaised / Donations.goal * 100
+    
+    
 
     var body: some View {
         NavigationView {
@@ -31,77 +31,70 @@ struct ContentView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:200, height: 75)
-                                
+                            
                             VStack{
-                              
+                                
                                 
                                 NavigationLink(destination: LoginView()) {
                                     Image("Login")
-                                                                    .resizable()
-                                                                        .aspectRatio(contentMode: .fit )
-                                                                        .frame(width:75, height: 25)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit )
+                                        .frame(width:75, height: 25)
                                 }
-//Deleted sign up as it is repetitive to login
-                                
                             }
                             
                         }.padding(.bottom, 20)
                         HStack(){
-//make button to make a pushable stack on click, in pushable stack make button to var fundsRaised value, and print a thank you response on submit and dismiss the pushable stack
+                            
                             NavigationLink(destination: Donate()) {
+                                Spacer(minLength: 20)
                                 Image("Donate")
-                                    
+                                
                                     .resizable()
                                     .aspectRatio(contentMode: .fit )
-                                    .frame(width:90, height: 30, alignment: .leading)
-                                    .offset(x: -10.0, y: 0.0)
+                                    .frame(width:80, height: 30, alignment: .leading)
+                                    .offset(x: -215.0, y: 0.0)
                             }
-                            
-                            
-                               
- //donate progression gauge
-// TODO: input code snippet from Cory
-                            
-                            var gaugeValue = 50.0
-                            Text("GOAL")
-                                .foregroundColor(.init("primaryGreen"))
-                                .fontWeight(.bold)
-                                .font(.callout)
-                                .offset(x: 100.0, y: 0.0)
-                                .baselineOffset(80)
-                            
-                            Gauge(value: gaugeValue, in: 0...100) {
-                                
-                            } currentValueLabel: {
-                                Text("50% Complete")
-                                    .foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
-                            } minimumValueLabel: {
-                                Text("0")
-                            } maximumValueLabel: {
-                                Text("100")
-                            }.gaugeStyle(.automatic)
-                                .tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
-                                
-                        }
-                        .frame(width:300, height:100, alignment: .trailing)
+							
+							VStack{
+								
+								var gaugeValue = 50.0
+															Gauge(value: gaugeValue, in: 0...100) {
+																Text("Goal $9,000")
+																	.bold()
+											.foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
+															} currentValueLabel: {
+																Text("50% Complete")
+																	.foregroundColor(gaugeValue == 100 ? .green : .init("primaryGreen"))
+															} minimumValueLabel: {
+																Text("0%")
+												
+									
+															} maximumValueLabel: {
+																Text("100%")
+															}.gaugeStyle(.automatic)
+																.tint(gaugeValue == 100 ? .green : .init("primaryGreen"))
+													
+							}.frame(width:150, height:75)
+								.offset(x: -150.0, y: 0.0)
+                            			
+													}
                         
-                            
                         HStack{
                             Image("CurrentProjectCard")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit )
                                 .frame(width:300, height: 400)
-                            
                         }
-                        NavigationLink(destination: //TODO: change navigation to previous project
-                                       LoginView()) {
+                        
+						NavigationLink (destination: Gallery()){
                             Image("SeeAll")
-                                                            .resizable()
-                                                                .aspectRatio(contentMode: .fit )
-                                                                .frame(width:75, height: 25)
-                                                                .offset(x: 90.0, y: -35.0)
-                                                            
+                                .resizable()
+                                .aspectRatio(contentMode: .fit )
+                                .frame(width:80, height: 30, alignment: .leading)
+                                
                         }
+                        .offset(x: 80.0, y: -40.0)
                         VStack{
                             Text("Current Homeowner Project")
                                 .foregroundColor(.init("primaryGreen"))
@@ -127,7 +120,6 @@ struct ContentView: View {
                         HStack{
                             Image("MenuBar")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit )
                                 .frame(width:600 )
                                 .offset(x: 0.0, y: -20.0)
                         }
@@ -135,27 +127,6 @@ struct ContentView: View {
                     
                 }
             }
-//            List {
-//                ForEach(items) { item in
-//                    NavigationLink {
-//                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-//                    } label: {
-//                        Text(item.timestamp!, formatter: itemFormatter)
-//                    }
-//                }
-//                .onDelete(perform: deleteItems)
-//            }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
-//            }
-//            Text("Select an item")
         }
     }
 
@@ -202,4 +173,23 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
+}
+
+class Donations: ObservableObject{
+    
+    @Published var donatedAmount: Double
+    @Published var fundsRaised: Double
+    @Published var goal: Double
+    @Published var gaugePercent: Double
+    init(donatedAmount: Double, fundsRaised: Double, goal: Double, gaugePercent: Double) {
+        self.donatedAmount = donatedAmount
+        self.fundsRaised = fundsRaised
+        self.goal = goal
+        self.gaugePercent = gaugePercent
+        func gPercent(){
+            self.gaugePercent = fundsRaised / goal * 100
+        }
+        
+    }
+    
 }
