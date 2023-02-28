@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class DeclarationsViewModel: ObservableObject {
 	
@@ -22,6 +23,7 @@ class DeclarationsViewModel: ObservableObject {
 		self.fundsRaised = fundsRaised
 		self.goal = goal
 		self.gaugeValue = gaugeValue
+		
 		
 		}
 	

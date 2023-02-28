@@ -98,9 +98,8 @@ struct Donate: View {
 					
 					Button(){
 					
-//						func addToFundsRaised() {
+
 							donatedAmount.fundsRaised += donatedAmount.donatedAmount
-//						}
 						
 							}
 					

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 @main
 struct Revitalize_0_1_2App: App {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct DeclarationItems: Identifiable {
 	 var id: UUID
@@ -13,7 +14,7 @@ struct DeclarationItems: Identifiable {
 	 var initGoal = Int()
 	 let fundsRaised: Double
 	 let donatedAmount: Double
-	 
+	 var gaugeValue = Double()
 }
 
 

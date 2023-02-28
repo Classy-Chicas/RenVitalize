@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class DeclarationDataService: ObservableObject {
 	let donatedAmount = 0.0
 	let fundsRaised = 0.0
 	let goal = 1800.0
-	let gaugeValue = 0.0
+	var gaugeValue = 0.0
 	
 	
 		
