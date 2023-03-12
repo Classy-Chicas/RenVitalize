@@ -6,21 +6,264 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+import Foundation
+
+struct EditGauge{
+	var isgaugePresented = false
+	var progress: Double = 0
+	mutating func present(initialProgress: Double){
+		progress = initialProgress
+		isgaugePresented = true
+	}
+}
+
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+	@EnvironmentObject private var gv: DeclarationsViewModel
+	@State private var editGauge = EditGauge()
+	func presentGauge() {
+		gv.gaugeValue = gv.fundsRaised / gv.goal * 100}
+	@State private var isPressed = false
+	
+	
+
+	
+	var body: some View {
+		
+		
+		NavigationView {
+			ScrollView  {
+				
+				ZStack{
+					VStack{
+						HStack{
+							Image("Logoletters")
+								.resizable()
+								.aspectRatio(contentMode: .fit )
+							
+								.frame(width:100, height: 100)
+								.padding(.bottom, -80)
+								.offset(x: 0.0, y: 0.0)
+							
+								NavigationLink(destination: LoginView()) {
+									Image(systemName: "person.crop.circle.fill")
+									.resizable()
+									.aspectRatio(contentMode:
+											.fit )
+										.frame(width:35, height: 35)
+										.offset(x: -5.0, y: 35.0)
+										.foregroundColor(.init("ForestGreen"))
+								}
+								.padding(.top, -20)
+								.padding(.leading, 200.0)
+							
+							
+						}
+						.padding(.top, -20)
+						.padding(.bottom, 60)
+						HStack(){
+							
+							NavigationLink(destination: Donate()) {
+								//
+								Image("Donate")
+								
+									.resizable()
+									.aspectRatio(contentMode: .fit )
+									.frame(width:80, height: 30, alignment: .leading)
+														.offset(x: 0.0, y: -20.0)
+								
+							}.padding(.trailing, 40.0)
+							
+							VStack{
+								
+								let gaugeValue = gv.fundsRaised / gv.goal * 100
+								
+								Gauge(value: gaugeValue, in: 0...100) {
+									
+									
+									
+									
+									Text("Goal $\(Int(gv.goal))")
+										.bold()
+										.foregroundColor(gaugeValue == 100 ? .green : .init("ForestGreen"))
+										
+								} currentValueLabel: {
+									
+									Text("$\(Int(gv.fundsRaised))")
+										.foregroundColor(gaugeValue ==  100 ? .green : .init("ForestGreen"))
+										.bold()
+										
+										
+								} minimumValueLabel: {
+									Text("0%")
+										.foregroundColor(.init("ForestGreen"))
+									
+									
+								} maximumValueLabel: {
+									Text("100%")
+										.foregroundColor(.init("ForestGreen"))
+								}.gaugeStyle(.automatic)
+									.tint(gaugeValue == 100 ? .green : .init("ForestGreen"))
+									
+								
+							}.frame(width:180, height:75)
+													.offset(x: 0.0, y: -20.0)
+							
+						}
+						
+						HStack{
+							Image("CurrentProjectCard")
+								.resizable()
+								.aspectRatio(contentMode: .fit )
+								.frame(width:400, height: 600)
+						}
+						.offset(x: 0.0, y: -80.0)
+						HStack(spacing: 25){
+							VStack{
+								Text("Post")
+									.bold()
+									.foregroundColor(.init("ForestGreen"))
+								Text("12")
+									.foregroundColor(.init("ForestGreen"))
+							}
+							VStack{
+								Text("Followers")
+									.bold()
+									.foregroundColor(.init("ForestGreen"))
+								Text("92")
+									.foregroundColor(.init("ForestGreen"))
+							}
+							Button(action:{
+								
+							}, label: {
+								Image( !isPressed ? "heart": "heartFilled")
+									.resizable()
+									.aspectRatio(contentMode: .fit )
+									.frame(width:40, height: 40)
+							})
+							.buttonStyle(.plain)
+							.pressAction {
+								isPressed = true
+							} onRelease: {
+								isPressed = true
+							}
+							
+							
+								
+								.foregroundColor(.init("ForestGreen"))
+								.font(.title)
+								
+							NavigationLink (destination: Gallery()) {
+								Image("GalleryIcon")
+									.resizable()
+									.aspectRatio(contentMode: .fit )
+									.frame(width:55, height: 65)
+									.padding(.top )
+								
+							}
+
+						}
+
+						
+												.offset(x: 0.0, y: -150.0)
+						VStack{
+							Text("Current Homeowner Project")
+								.foregroundColor(.init("ForestGreen"))
+								.padding()
+								.fontWeight(.black)
+							Text("CREATED 12/23/2022")
+								.font(.caption)
+								.fontWeight(.light)
+								.foregroundColor(.init("ForestGreen"))
+								
+								.offset(x: 0.0, y: -20.0)
+							Text("BIO")
+								.foregroundColor(.init("ForestGreen"))
+								.fontWeight(.semibold)
+							Text("Hi we’re the Fordson’s and we have a 1919 craftsmen we are fixing. Unfortunately our home was ravaged by multiple torrential rainstorms within a couple weeks window. This left many parts of the home uninhabitable. We have already gutted and removed debris and need a little help with funding to repair many room.")
+								.foregroundColor(.init("ForestGreen"))
+								
+								.multilineTextAlignment(.center)
+								.frame(width:300)
+								.padding()
+								
+							
+						}
+						.offset(x: 0.0, y: -150.0)
+						HStack{
+							NavigationLink(destination: HomeOwnersGuide()){
+								Image("HomeOwnersGuideCard")
+									.resizable()
+									.aspectRatio(contentMode: .fit )
+									.frame(width:400, height: 130)
+									.offset(x: 0.0, y: 0.0)
+							}
+							.offset(x: 0.0, y: -150.0)
+							
+						}
+						ZStack{
+							Image("CPActivity")
+								.resizable()
+								.aspectRatio(contentMode: .fit )
+								.frame(width:600 )
+								.offset(x: 0.0, y: -100.0)
+							HStack{
+								Text("Project Activity")
+									.font(.title)
+									.fontWeight(.bold)
+									.frame(maxHeight: .infinity, alignment: .top)
+									.foregroundColor(.init("ForestGreen"))
+									.padding(.top, 50)
+								
+							}
+						}
+						
+						}
+						
+					}
+				Spacer()
+				
+				
+				
+				
+//				HStack {
+//
+//
+//					Image(systemName: "text.below.photo.fill")
+//						.foregroundColor(Color.gray)
+//
+//							Text("GALLERY")
+//
+//
+//					Image(systemName: "person.crop.circle.fill")
+//						.foregroundColor(Color.gray)
+//							Text("PROFILE")
+//
+//				}
+//
+//				.frame(maxWidth: .infinity)
+//				.frame(height: 50)
+//				.padding(.top, 50.0)
+//				.background(Color(hue: 0.668, saturation: 0.019, brightness: 0.82, opacity: 0.243))
+				
+				
+				
+				
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	struct ContentView_Previews: PreviewProvider {
+		static var previews: some View {
+		
+			ContentView() .environmentObject(DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 0))
+			
+		}
+	}
+
