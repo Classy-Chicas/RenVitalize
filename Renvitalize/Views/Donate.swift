@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct Donate: View {
-	@State private var messageToHomeOwner: String = ""
+	@EnvironmentObject private var  messageToHomeOwner: DeclarationsViewModel
+	@State private var message: String = ""
+	@State private var donorName: String = ""
 	@State private var switchToggle = false
 	@State private var donorSignature: String = ""
 	@State private var showingAlert = false
+	
 	@EnvironmentObject private var donatedAmount: DeclarationsViewModel
+	@EnvironmentObject private var gv: DeclarationsViewModel
+	
 	
 	var body: some View {
 		VStack{
@@ -81,19 +86,7 @@ struct Donate: View {
 				}
 				
 				
-				Text("Leave a message for the Fordson's")
-					.italic()
-					.foregroundColor(.init("ForestGreen"))
-				TextField("Message", text: $messageToHomeOwner)
-					.padding(.bottom, 30.0)
-					.offset(x: 15.0, y: -30.0)
-					.frame(width: 250, height: 120.0)
-					.border(Color(hue: 0.646, saturation: 0.052, brightness: 0.854), width: 1)
-					.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-					.textInputAutocapitalization(/*@START_MENU_TOKEN@*/.words/*@END_MENU_TOKEN@*/)
-					.scrollDismissesKeyboard(/*@START_MENU_TOKEN@*/.immediately/*@END_MENU_TOKEN@*/)
-					
-					
+				
 				
 				
 		

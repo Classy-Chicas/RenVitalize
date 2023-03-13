@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+
+
 class DeclarationsViewModel: ObservableObject {
 	
 	@Published var donatedAmount: Double
