@@ -19,15 +19,16 @@ class DeclarationsViewModel: ObservableObject {
 		fundsRaised / goal
 	}
 	@Published var initGoal: Int
+	@Published var isDonated: Bool
 	
 	
-	
-	init(donatedAmount: Double, fundsRaised: Double, goal: Double, gaugeValue: Double, initGoal: Int) {
+	init(donatedAmount: Double, fundsRaised: Double, goal: Double, gaugeValue: Double, initGoal: Int, isDonated: Bool) {
 		self.donatedAmount = donatedAmount
 		self.fundsRaised = fundsRaised
 		self.goal = goal
 //		self.gaugeValue = gaugeValue
 		self.initGoal = initGoal
+		self.isDonated = isDonated
 		
 		
 		}

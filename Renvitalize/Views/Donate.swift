@@ -92,7 +92,7 @@ struct Donate: View {
 					
 					Button(){
 					
-
+						gv.isDonated = true
 							gv.fundsRaised += gv.donatedAmount
 						
 							}
@@ -122,6 +122,6 @@ struct Donate: View {
 
 struct Donate_Previews: PreviewProvider {
 	static var previews: some View {
-		Donate(gv: DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 0.0, gaugeValue: 1800, initGoal: 0))
+		Donate(gv: DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 0.0, gaugeValue: 1800, initGoal: 0, isDonated: false))
 	}
 }

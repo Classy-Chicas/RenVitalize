@@ -32,10 +32,11 @@ struct ContentView: View {
 		@State private var isAddedTapped: Bool = false
 		@State private var studentName: String = ""
 	
-	@StateObject private var gv = DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 1800)
+	@StateObject private var gv = DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 1800, isDonated: false)
 	@State private var editGauge = EditGauge()
 //	func presentGauge() {
 //		gv.gaugeValue = gv.fundsRaised / gv.goal * 100}
+	
 	@State private var isPressed = false
 	
 	struct MessageItems: Identifiable {
@@ -45,6 +46,7 @@ struct ContentView: View {
 	
 	let hours   = (Calendar.current.component(.hour, from: Date()))
 	let minutes = (Calendar.current.component(.minute, from: Date()))
+	
 	
 	var body: some View {
 		
@@ -225,6 +227,7 @@ struct ContentView: View {
 								.aspectRatio(contentMode: .fit )
 								.frame(width:600 )
 								.offset(x: 0.0, y: -100.0)
+								.opacity(0.2)
 							
 								
 							
@@ -259,7 +262,7 @@ struct ContentView: View {
 															.padding()
 															
 														VStack{
-															Text("Sent \(Date(), style: .date) at \(hours): \(minutes)")
+															Text("Sent \(Date(), style: .date) at \(hours):\(minutes)")
 																.font(.caption)
 																.fontWeight(.light)
 															Text(student.name)
@@ -277,6 +280,35 @@ struct ContentView: View {
 													.frame(width: 350, alignment: .leading)
 														
 												}
+												if gv.isDonated == true {
+//													ForEach (0..<1)
+//													{ index in
+														HStack {
+															Image("dollarSign")
+																.resizable()
+																.aspectRatio(contentMode: .fit )
+																.frame(width:35, height: 65, alignment: .topLeading)
+																.padding()
+															VStack {
+																Text("Sent \(Date(), style: .date) at \(hours):\(minutes)")
+																	.font(.caption)
+																	.fontWeight(.light)
+																Text("YAY! $\(Int(gv.donatedAmount)) was donated!")
+																	.foregroundColor(.black)
+																	.font(.title3)
+																	.fontWeight(.medium)
+																	.padding(.all, 10.0)
+																	.frame(width: 250.0)
+																	.background(.white)
+																	.cornerRadius(9.0)
+															}
+															
+														}
+//													}
+
+												}
+																								
+												
 												
 											}
 											// List
