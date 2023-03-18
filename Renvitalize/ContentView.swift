@@ -43,8 +43,8 @@ struct ContentView: View {
 		var items: String
 	}
 	
-	
-	
+	let hours   = (Calendar.current.component(.hour, from: Date()))
+	let minutes = (Calendar.current.component(.minute, from: Date()))
 	
 	var body: some View {
 		
@@ -200,7 +200,7 @@ struct ContentView: View {
 							Text("Hi we’re the Fordson’s and we have a 1919 craftsmen we are fixing. Unfortunately our home was ravaged by multiple torrential rainstorms within a couple weeks window. This left many parts of the home uninhabitable. We have already gutted and removed debris and need a little help with funding to repair many room.")
 								.foregroundColor(.init("ForestGreen"))
 							
-								.multilineTextAlignment(.center)
+								.multilineTextAlignment(.leading)
 								.frame(width:300)
 								.padding()
 							
@@ -218,27 +218,27 @@ struct ContentView: View {
 							.offset(x: 0.0, y: -150.0)
 							
 						}
+						
 						ZStack{
 							Image("CPActivity")
 								.resizable()
 								.aspectRatio(contentMode: .fit )
 								.frame(width:600 )
 								.offset(x: 0.0, y: -100.0)
-							HStack{
-								Text("Project Activity")
-									.font(.title)
-									.fontWeight(.bold)
-									.frame(maxHeight: .infinity, alignment: .top)
-									.foregroundColor(.init("ForestGreen"))
-									.padding(.top, 50)
+							
 								
-							}
 							
 							VStack{
+								Text(" Project Activity")
+									.font(.title)
+									.fontWeight(.bold)
+									.foregroundColor(.init("ForestGreen"))
+									.padding(.vertical, 60)
+									
 								
 								ZStack {
 									if !isAddedTapped {
-										VStack( spacing: 8, content: {
+										VStack( spacing: 10, content: {
 											Button(action: {
 												isAddedTapped = true
 											}, label: {
@@ -247,14 +247,34 @@ struct ContentView: View {
 													.font(.title2)
 													.fontWeight(.semibold)
 													
-													.padding(.top, 100)
+													.padding(.top, 8)
 											})
-											List {
+											VStack {
 												ForEach(records.students) { student in
-													Text(student.name)
-														.foregroundColor(.black)
-														.font(.title3)
-														.fontWeight(.medium)
+													HStack {
+														Image("bullHorn")
+															.resizable()
+															.aspectRatio(contentMode: .fit )
+															.frame(width:35, height: 65, alignment: .topLeading)
+															.padding()
+															
+														VStack{
+															Text("Sent \(Date(), style: .date) at \(hours): \(minutes)")
+																.font(.caption)
+																.fontWeight(.light)
+															Text(student.name)
+																.foregroundColor(.black)
+																.font(.title3)
+																.fontWeight(.medium)
+																.padding(.all, 10.0)
+																.frame(width: 250.0)
+																.background(.white)
+																.cornerRadius(9.0)
+														}
+														
+														
+													}
+													.frame(width: 350, alignment: .leading)
 														
 												}
 												
@@ -267,8 +287,9 @@ struct ContentView: View {
 										VStack(alignment: .center, spacing: 16, content: {
 											TextField("Message", text: $studentName)
 												.padding(.leading, 8)
-												.padding(.top, 8)
+												.padding(.top, -30)
 												.padding(.bottom, 8)
+												.frame(width: 350.0, height: 100)
 												.autocapitalization(.none)
 												.disableAutocorrection(true)
 												.border(Color(UIColor.separator))
@@ -288,9 +309,9 @@ struct ContentView: View {
 											.cornerRadius(8)
 										})// VStack
 										.frame(width: 180, height: 80, alignment: .center)
-										.padding(.top, 100)
-										
-										
+									}
+									}
+								Spacer()
 									}
 									
 								}//ZStack
@@ -298,8 +319,8 @@ struct ContentView: View {
 								
 								Spacer()
 								
-							}
-						}
+							
+						
 					}
 					}
 				Spacer()
