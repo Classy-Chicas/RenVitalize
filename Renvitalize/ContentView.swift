@@ -19,10 +19,10 @@ struct EditGauge{
 }
 
 class Records: ObservableObject {
-	@Published var students: [Student] = [Student]()
+	@Published var sentMessage: [Message] = [Message]()
 }
 
-struct Student: Identifiable {
+struct Message: Identifiable {
 	let id = UUID()
 	var name: String
 }
@@ -30,7 +30,7 @@ struct Student: Identifiable {
 struct ContentView: View {
 	@StateObject var records: Records = Records()
 		@State private var isAddedTapped: Bool = false
-		@State private var studentName: String = ""
+		@State private var currentMessage: String = ""
 	
 	@StateObject private var gv = DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 1800, isDonated: false)
 	@State private var editGauge = EditGauge()
@@ -239,6 +239,7 @@ struct ContentView: View {
 									.padding(.vertical, 60)
 									
 								
+								
 								ZStack {
 									if !isAddedTapped {
 										VStack( spacing: 10, content: {
@@ -252,8 +253,10 @@ struct ContentView: View {
 													
 													.padding(.top, 8)
 											})
+											
+											
 											VStack {
-												ForEach(records.students) { student in
+												ForEach(records.sentMessage) { student in
 													HStack {
 														Image("bullHorn")
 															.resizable()
@@ -293,7 +296,7 @@ struct ContentView: View {
 																Text("Sent \(Date(), style: .date) at \(hours):\(minutes)")
 																	.font(.caption)
 																	.fontWeight(.light)
-																Text("YAY! $\(Int(gv.donatedAmount)) was donated!")
+																Text("YAY! $\(Int(gv.donatedAmount)) WAS DONATED!!!")
 																	.foregroundColor(.black)
 																	.font(.title3)
 																	.fontWeight(.medium)
@@ -317,7 +320,7 @@ struct ContentView: View {
 										
 									} else {
 										VStack(alignment: .center, spacing: 16, content: {
-											TextField("Message", text: $studentName)
+											TextField("Message", text: $currentMessage)
 												.padding(.leading, 8)
 												.padding(.top, -30)
 												.padding(.bottom, 8)
@@ -326,8 +329,8 @@ struct ContentView: View {
 												.disableAutocorrection(true)
 												.border(Color(UIColor.separator))
 											Button(action: {
-												records.students.append(Student(name: studentName))
-												studentName = ""
+												records.sentMessage.append(Message(name: currentMessage))
+												currentMessage = ""
 												isAddedTapped = false
 											}, label: {
 												Text("Add")
