@@ -28,14 +28,14 @@ struct Student: Identifiable {
 }
 
 struct ContentView: View {
-	@ObservedObject var records: Records = Records()
+	@StateObject var records: Records = Records()
 		@State private var isAddedTapped: Bool = false
 		@State private var studentName: String = ""
 	
-	@EnvironmentObject private var gv: DeclarationsViewModel
+	@StateObject private var gv = DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 1800)
 	@State private var editGauge = EditGauge()
-	func presentGauge() {
-		gv.gaugeValue = gv.fundsRaised / gv.goal * 100}
+//	func presentGauge() {
+//		gv.gaugeValue = gv.fundsRaised / gv.goal * 100}
 	@State private var isPressed = false
 	
 	struct MessageItems: Identifiable {
@@ -81,7 +81,7 @@ struct ContentView: View {
 						.padding(.bottom, 60)
 						HStack(){
 							
-							NavigationLink(destination: Donate()) {
+							NavigationLink(destination: Donate(gv: gv)) {
 								//
 								Image("Donate")
 								
@@ -94,21 +94,20 @@ struct ContentView: View {
 							
 							VStack{
 								
-								let gaugeValue = gv.fundsRaised / gv.goal * 100
 								
-								Gauge(value: gaugeValue, in: 0...100) {
+								Gauge(value: gv.gaugeValue, in: 0...1) {
 									
 									
 									
 									
 									Text("Goal $\(Int(gv.goal))")
 										.bold()
-										.foregroundColor(gaugeValue == 100 ? .green : .init("ForestGreen"))
+										.foregroundColor(gv.gaugeValue == 100 ? .green : .init("ForestGreen"))
 									
 								} currentValueLabel: {
 									
 									Text("$\(Int(gv.fundsRaised))")
-										.foregroundColor(gaugeValue ==  100 ? .green : .init("ForestGreen"))
+										.foregroundColor(gv.gaugeValue ==  100 ? .green : .init("ForestGreen"))
 										.bold()
 									
 									
@@ -121,7 +120,7 @@ struct ContentView: View {
 									Text("100%")
 										.foregroundColor(.init("ForestGreen"))
 								}.gaugeStyle(.automatic)
-									.tint(gaugeValue == 100 ? .green : .init("ForestGreen"))
+									.tint(gv.gaugeValue == 100 ? .green : .init("ForestGreen"))
 								
 								
 							}.frame(width:180, height:75)
@@ -295,7 +294,7 @@ struct ContentView: View {
 									}
 									
 								}//ZStack
-								.frame(width: 350, height: .infinity)
+								.frame(width: 350)
 								
 								Spacer()
 								
@@ -318,7 +317,7 @@ struct ContentView: View {
 	struct ContentView_Previews: PreviewProvider {
 		static var previews: some View {
 		
-			ContentView() .environmentObject(DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 1800.0, gaugeValue: 0.0, initGoal: 0))
+			ContentView()
 			
 		}
 	}

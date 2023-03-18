@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct Donate: View {
-	@EnvironmentObject private var  messageToHomeOwner: DeclarationsViewModel
-	@State private var message: String = ""
-	@State private var donorName: String = ""
+	
+	@ObservedObject var gv: DeclarationsViewModel
 	@State private var switchToggle = false
 	@State private var donorSignature: String = ""
 	@State private var showingAlert = false
-	
-	@EnvironmentObject private var donatedAmount: DeclarationsViewModel
-	@EnvironmentObject private var gv: DeclarationsViewModel
 	
 	
 	var body: some View {
@@ -44,7 +40,7 @@ struct Donate: View {
 			Grid(){
 				GridRow(){
 					Button(){
-						donatedAmount.donatedAmount = 25.0
+						gv.donatedAmount = 25.0
 					} label: {
 						Image("Pay25")
 							.resizable()
@@ -54,7 +50,7 @@ struct Donate: View {
 					
 					
 					Button(){
-						donatedAmount.donatedAmount = 50.0
+						gv.donatedAmount = 50.0
 					} label: {
 						Image("Pay50")
 							.resizable()
@@ -66,7 +62,7 @@ struct Donate: View {
 				
 				GridRow(){
 					Button(){
-						donatedAmount.donatedAmount = 100.0
+						gv.donatedAmount = 100.0
 					} label: {
 						Image("Pay100")
 							.resizable()
@@ -75,7 +71,7 @@ struct Donate: View {
 					}
 					
 					Button(){
-						donatedAmount.donatedAmount = 200.0
+						gv.donatedAmount = 200.0
 					} label: {
 						Image("Pay200")
 							.resizable()
@@ -97,7 +93,7 @@ struct Donate: View {
 					Button(){
 					
 
-							donatedAmount.fundsRaised += donatedAmount.donatedAmount
+							gv.fundsRaised += gv.donatedAmount
 						
 							}
 					
@@ -126,7 +122,6 @@ struct Donate: View {
 
 struct Donate_Previews: PreviewProvider {
 	static var previews: some View {
-		Donate()
-			.environmentObject(DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 0.0, gaugeValue: 1800, initGoal: 0))
+		Donate(gv: DeclarationsViewModel(donatedAmount: 0.0, fundsRaised: 0.0, goal: 0.0, gaugeValue: 1800, initGoal: 0))
 	}
 }
