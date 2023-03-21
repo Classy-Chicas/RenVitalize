@@ -256,7 +256,7 @@ struct ContentView: View {
 											
 											
 											VStack {
-												ForEach(records.sentMessage) { student in
+												ForEach(records.sentMessage) { message in
 													HStack {
 														Image("bullHorn")
 															.resizable()
@@ -268,7 +268,7 @@ struct ContentView: View {
 															Text("Sent \(Date(), style: .date) at \(hours):\(minutes)")
 																.font(.caption)
 																.fontWeight(.light)
-															Text(student.name)
+															Text(message.name)
 																.foregroundColor(.black)
 																.font(.title3)
 																.fontWeight(.medium)
@@ -304,6 +304,7 @@ struct ContentView: View {
 																	.frame(width: 250.0)
 																	.background(.white)
 																	.cornerRadius(9.0)
+																	.italic()
 															}
 															
 														}
