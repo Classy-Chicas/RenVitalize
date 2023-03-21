@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		656251B829C8D0CF009EB253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Revitalize_0_1_2/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		656251B829C8D0CF009EB253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/andreareed/Documents/Challenge 4/Renvitalize/Renvitalize/Assets.xcassets"; sourceTree = "<absolute>"; };
 		656251BA29C91F12009EB253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		656251BB29C91F86009EB253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		659848B529BE3B8F00B9F03C /* Renvitalize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renvitalize.app; sourceTree = BUILT_PRODUCTS_DIR; };
