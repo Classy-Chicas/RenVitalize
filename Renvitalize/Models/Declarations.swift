@@ -16,6 +16,7 @@ struct DeclarationItems: Identifiable {
 	let donatedAmount: Double
 	var gaugeValue: Double
 	
+	
 }
 
 

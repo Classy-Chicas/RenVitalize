@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		656251B929C8D0D0009EB253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656251B829C8D0CF009EB253 /* Assets.xcassets */; };
+		656251BC29C91F86009EB253 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656251BB29C91F86009EB253 /* Launch Screen.storyboard */; };
 		659848B929BE3B8F00B9F03C /* RenvitalizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659848B829BE3B8F00B9F03C /* RenvitalizeApp.swift */; };
 		659848BB29BE3B8F00B9F03C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659848BA29BE3B8F00B9F03C /* ContentView.swift */; };
 		659848C029BE3B9000B9F03C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659848BF29BE3B9000B9F03C /* Preview Assets.xcassets */; };
-		659848C729BE3C4000B9F03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659848C629BE3C4000B9F03C /* Assets.xcassets */; };
 		659848F029BE3C7000B9F03C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659848D729BE3C7000B9F03C /* LoginView.swift */; };
 		659848F129BE3C7000B9F03C /* Donate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659848D829BE3C7000B9F03C /* Donate.swift */; };
 		659848F229BE3C7000B9F03C /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659848D929BE3C7000B9F03C /* Gallery.swift */; };
@@ -22,11 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		656251B829C8D0CF009EB253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Revitalize_0_1_2/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		656251BA29C91F12009EB253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		656251BB29C91F86009EB253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		659848B529BE3B8F00B9F03C /* Renvitalize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renvitalize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659848B829BE3B8F00B9F03C /* RenvitalizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenvitalizeApp.swift; sourceTree = "<group>"; };
 		659848BA29BE3B8F00B9F03C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		659848BF29BE3B9000B9F03C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		659848C629BE3C4000B9F03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../NewRenVitalize/NewRenVitalize/Assets.xcassets; sourceTree = "<group>"; };
 		659848D729BE3C7000B9F03C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		659848D829BE3C7000B9F03C /* Donate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donate.swift; sourceTree = "<group>"; };
 		659848D929BE3C7000B9F03C /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		659848E329BE3C7000B9F03C /* DeclarationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarationsViewModel.swift; sourceTree = "<group>"; };
 		659848E629BE3C7000B9F03C /* DeclarationsDataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarationsDataServices.swift; sourceTree = "<group>"; };
 		659848FD29BE3C7F00B9F03C /* HomeOwnersGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOwnersGuide.swift; sourceTree = "<group>"; };
+		65ACDAAA29C647950032CBFC /* Renvitalize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Renvitalize.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,10 @@
 		659848B729BE3B8F00B9F03C /* Renvitalize */ = {
 			isa = PBXGroup;
 			children = (
+				656251BB29C91F86009EB253 /* Launch Screen.storyboard */,
+				656251BA29C91F12009EB253 /* Info.plist */,
+				656251B829C8D0CF009EB253 /* Assets.xcassets */,
+				65ACDAAA29C647950032CBFC /* Renvitalize.entitlements */,
 				659848DF29BE3C7000B9F03C /* Models */,
 				659848E229BE3C7000B9F03C /* ViewModels */,
 				659848D629BE3C7000B9F03C /* Views */,
@@ -74,7 +82,6 @@
 				659848E529BE3C7000B9F03C /* DataServices */,
 				659848B829BE3B8F00B9F03C /* RenvitalizeApp.swift */,
 				659848BA29BE3B8F00B9F03C /* ContentView.swift */,
-				659848C629BE3C4000B9F03C /* Assets.xcassets */,
 				659848BE29BE3B9000B9F03C /* Preview Content */,
 			);
 			path = Renvitalize;
@@ -181,7 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659848C729BE3C4000B9F03C /* Assets.xcassets in Resources */,
+				656251BC29C91F86009EB253 /* Launch Screen.storyboard in Resources */,
+				656251B929C8D0D0009EB253 /* Assets.xcassets in Resources */,
 				659848C029BE3B9000B9F03C /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,25 +335,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_STICKER_CONTENT = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Renvitalize/Renvitalize.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Renvitalize/Preview Content\"";
 				DEVELOPMENT_TEAM = MHBCTU8RNB;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Renvitalize/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.voitekgraphics.Renvitalize;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.voitekgraphics.Renvitalized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,25 +375,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_STICKER_CONTENT = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Renvitalize/Renvitalize.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Renvitalize/Preview Content\"";
 				DEVELOPMENT_TEAM = MHBCTU8RNB;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Renvitalize/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.voitekgraphics.Renvitalize;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.voitekgraphics.Renvitalized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

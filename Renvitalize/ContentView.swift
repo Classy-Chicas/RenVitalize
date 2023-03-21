@@ -199,7 +199,7 @@ struct ContentView: View {
 							Text("BIO")
 								.foregroundColor(.init("ForestGreen"))
 								.fontWeight(.semibold)
-							Text("Hi we’re the Fordson’s and we have a 1919 craftsmen we are fixing. Unfortunately our home was ravaged by multiple torrential rainstorms within a couple weeks window. This left many parts of the home uninhabitable. We have already gutted and removed debris and need a little help with funding to repair many room.")
+							Text("Hi we’re the Fordson’s and we have a 1919 craftsmen we are fixing. Unfortunately our home was ravaged by multiple torrential rainstorms within a couple weeks window. This left many parts of the home uninhabitable. We have already gutted and removed debris and need a little help with funding to repair many rooms.")
 								.foregroundColor(.init("ForestGreen"))
 							
 								.multilineTextAlignment(.leading)
@@ -296,7 +296,7 @@ struct ContentView: View {
 																Text("Sent \(Date(), style: .date) at \(hours):\(minutes)")
 																	.font(.caption)
 																	.fontWeight(.light)
-																Text("YAY! $\(Int(gv.donatedAmount)) WAS DONATED!!!")
+																Text("YAY! $\(Int(gv.fundsRaised)) WAS DONATED!!!")
 																	.foregroundColor(.black)
 																	.font(.title3)
 																	.fontWeight(.medium)
@@ -308,7 +308,6 @@ struct ContentView: View {
 															
 														}
 //													}
-
 												}
 																								
 												
@@ -377,4 +376,3 @@ struct ContentView: View {
 			
 		}
 	}
-
